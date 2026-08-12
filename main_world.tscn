@@ -1,8 +1,36 @@
 [gd_scene format=3 uid="uid://daincstdtn3y4"]
 
+[ext_resource type="PackedScene" uid="uid://6h06468uhxkd" path="res://player.tscn" id="1_itk02"]
+[ext_resource type="PackedScene" uid="uid://cydm5qm3cjefv" path="res://trash_item.tscn" id="2_uoqbt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uoqbt"]
+albedo_color = Color(0.8175213, 0.8175213, 0.81752115, 1)
+
+[sub_resource type="Environment" id="Environment_43o5b"]
+background_mode = 2
+background_color = Color(0.45404524, 0.6314682, 1, 1)
+
 [node name="MainWorld" type="Node3D" unique_id=311081930]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1917820758]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012433529, -0.009853244, -0.00065898895)
 use_collision = true
 size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_uoqbt")
+
+[node name="Player" parent="." unique_id=998323364 instance=ExtResource("1_itk02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="TrashItem" parent="." unique_id=1529927743 instance=ExtResource("2_uoqbt")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=159004147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1067195641]
+environment = SubResource("Environment_43o5b")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1957022329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+light_energy = 3.0
+omni_range = 40.0

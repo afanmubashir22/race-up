@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cydm5qm3cjefv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jptq"]
+albedo_color = Color(1, 1, 0.11372549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6jptq"]
+material = SubResource("StandardMaterial3D_6jptq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pglwa"]
+
+[node name="TrashItem" type="RigidBody3D" unique_id=1529927743 groups=["pickable"]]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+metadata/item_type = ""
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1491286326]
+mesh = SubResource("BoxMesh_6jptq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=366679589]
+shape = SubResource("BoxShape3D_pglwa")
