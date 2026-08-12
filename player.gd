@@ -40,7 +40,11 @@ func _pick_item() -> void:
 			if collider is RigidBody3D and collider.is_in_group("pickable"):
 					held_object = collider
 					held_object.freeze = true
+					if held_object.has_node("CollisionShape3D"):
+							held_object.get_node("CollisionShape3D").disabled = true
 func _drop_item() -> void:
 	if held_object:
-			held_object.freeze = false
-			held_object = null
+		if held_object.has_node("CollisionShape3D"):
+				held_object.get_node("CollisionShape3D").disabled = false
+		held_object.freeze = false
+		held_object = null

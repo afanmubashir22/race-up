@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://daincstdtn3y4"]
 
+[ext_resource type="PackedScene" uid="uid://byahi2gqu21ku" path="res://trash_bin.tscn" id="1_43o5b"]
 [ext_resource type="PackedScene" uid="uid://6h06468uhxkd" path="res://player.tscn" id="1_itk02"]
 [ext_resource type="PackedScene" uid="uid://cydm5qm3cjefv" path="res://trash_item.tscn" id="2_uoqbt"]
 
@@ -18,6 +19,9 @@ use_collision = true
 size = Vector3(20, 1, 20)
 material = SubResource("StandardMaterial3D_uoqbt")
 
+[node name="TrashBin" parent="CSGBox3D" unique_id=1447114455 instance=ExtResource("1_43o5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.6, -3)
+
 [node name="Player" parent="." unique_id=998323364 instance=ExtResource("1_itk02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
@@ -34,3 +38,14 @@ environment = SubResource("Environment_43o5b")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 light_energy = 3.0
 omni_range = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1494742508]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=473538855]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 132.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 32
+text = "Score: 0
+"
