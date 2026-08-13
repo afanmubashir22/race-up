@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cs5fqafkf6jo0"]
 
+[ext_resource type="Script" uid="uid://c1fmhoalwvw86" path="res://trash_bin.gd" id="1_3dyfb"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdfl5"]
 albedo_color = Color(0, 1, 1, 1)
 
@@ -11,6 +13,8 @@ size = Vector3(1.5, 1.2, 1.5)
 size = Vector3(1.8, 1.8, 1.8)
 
 [node name="Recycle_bin" type="Area3D" unique_id=1803229437]
+script = ExtResource("1_3dyfb")
+accepts_type = "Recycle"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1084985676]
 mesh = SubResource("BoxMesh_3dyfb")

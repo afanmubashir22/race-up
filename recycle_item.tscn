@@ -11,7 +11,7 @@ size = Vector3(0.4, 0.4, 0.4)
 size = Vector3(0.4, 0.4, 0.4)
 
 [node name="RecycleItem" type="RigidBody3D" unique_id=2082948300 groups=["pickable"]]
-metadata/item_type = ""
+metadata/item_type = "Recycle"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1980084400]
 mesh = SubResource("BoxMesh_s3fry")

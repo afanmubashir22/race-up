@@ -5,10 +5,10 @@ albedo_color = Color(1, 1, 0.11372549, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6jptq"]
 material = SubResource("StandardMaterial3D_6jptq")
-size = Vector3(4, 4, 4)
+size = Vector3(0.4, 0.4, 0.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pglwa"]
-size = Vector3(4, 4, 4)
+size = Vector3(0.6, 0.6, 0.6)
 
 [node name="TrashItem" type="RigidBody3D" unique_id=1529927743 groups=["pickable"]]
 metadata/item_type = "Trash"
