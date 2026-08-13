@@ -5,13 +5,15 @@ extends CharacterBody3D
 @export var MOUSE_SENSITIVITY: float = 0.003
 
 @onready var camera: Camera3D = $Camera3D
-@onready var raycast: RayCast3D = $Camera3D/RayCast3D
+@onready var shapecast: ShapeCast3D = $Camera3D/RayCast3D
 @onready var carry_position: Marker3D = $Camera3D/CarryPosition
 
 var held_item: RigidBody3D = null
 
 func _ready() -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		if shapecast:
+				shapecast.add_exception(self)
 		
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -40,7 +42,7 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 				if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-						Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+						Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 				else:
 						Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -53,15 +55,21 @@ func _unhandled_input(event: InputEvent) -> void:
 				else:
 						drop_item()
 func try_pickup_item() -> void:
-		if raycast and raycast.is_colliding():
-				var collider = raycast.get_collider()
-				print("Raycast hit: ", collider)
+		if shapecast and shapecast.is_colliding():
+				var collider = shapecast.get_collider(0)
+				print("Shapecast hit: ", collider)
 				if collider and collider.is_in_group("pickable") and collider is RigidBody3D:
 						held_item = collider
 						held_item.freeze = true
-						print("Picked up: ", held_item.name)
+						var collision_shape = held_item.get_node_or_null("CollisionShape3D")
+						if collision_shape:
+								collision_shape.disabled = true
+						print("Successfully picked up: ", held_item.name)
 func drop_item() -> void:
 		if held_item:
+				var collision_shape = held_item.get_node_or_null("CollisionShape3D")
+				if collision_shape:
+						collision_shape.disabled = false
 				held_item.freeze = false
 				print("Dropped: ", held_item.name)
 				held_item = null

@@ -8,7 +8,7 @@ material = SubResource("StandardMaterial3D_dwr0a")
 size = Vector3(0.4, 0.4, 0.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6xns5"]
-size = Vector3(0.4, 0.4, 0.4)
+size = Vector3(0.39058837, 0.4, 0.4)
 
 [node name="RecycleItem" type="RigidBody3D" unique_id=2082948300 groups=["pickable"]]
 metadata/item_type = "Recycle"
@@ -17,4 +17,5 @@ metadata/item_type = "Recycle"
 mesh = SubResource("BoxMesh_s3fry")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=814947203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0047424436, -0.0024751723, 0)
 shape = SubResource("BoxShape3D_6xns5")

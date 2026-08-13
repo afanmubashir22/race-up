@@ -4,6 +4,9 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_4flbx"]
+radius = 0.4
+
 [node name="Player" type="CharacterBody3D" unique_id=998323364]
 script = ExtResource("1_4flbx")
 
@@ -13,10 +16,11 @@ shape = SubResource("CapsuleShape3D_sh265")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1404236254]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
-[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1002132630]
+[node name="RayCast3D" type="ShapeCast3D" parent="Camera3D" unique_id=1770052409]
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0)
-target_position = Vector3(0, -1, -3)
-hit_from_inside = true
+shape = SubResource("SphereShape3D_4flbx")
+target_position = Vector3(0, 0, -4)
+max_results = 2
 
 [node name="CarryPosition" type="Marker3D" parent="Camera3D" unique_id=1028004456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
