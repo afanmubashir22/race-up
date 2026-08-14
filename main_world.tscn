@@ -5,6 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://cydm5qm3cjefv" path="res://trash_item.tscn" id="2_uoqbt"]
 [ext_resource type="PackedScene" uid="uid://cs5fqafkf6jo0" path="res://recycle_bin.tscn" id="4_whfra"]
 [ext_resource type="PackedScene" uid="uid://bx40jdidf7ev0" path="res://recycle_item.tscn" id="5_uue8y"]
+[ext_resource type="PackedScene" uid="uid://cym4oy00t3n15" path="res://assets/simple_dining_table.glb" id="6_8i6ae"]
+[ext_resource type="PackedScene" uid="uid://c6l80t50s8xhv" path="res://assets/kitchen_cabinet_and_counter.glb" id="7_v7yd6"]
+[ext_resource type="PackedScene" uid="uid://1kcovw3507ax" path="res://assets/a_kitchen_sink_with_cabinets_for_storage.glb" id="8_wly0c"]
+[ext_resource type="PackedScene" uid="uid://b4ttv12hhpqjb" path="res://assets/fridge_-_modern_furniture_game-ready.glb" id="9_xftef"]
+[ext_resource type="PackedScene" uid="uid://c4q7hwr28vohy" path="res://assets/floor_parquet_kitchen.glb" id="10_bqrff"]
+[ext_resource type="PackedScene" uid="uid://wb7d837i35j3" path="res://assets/wall-mounted_kitchen_cupboard.glb" id="11_ju1fa"]
+[ext_resource type="PackedScene" uid="uid://cuulpijl77hly" path="res://assets/microwave_rigged_free_-_noncommercial.glb" id="12_fc1ei"]
+[ext_resource type="PackedScene" uid="uid://d1hgi02mvxykl" path="res://assets/bed_01.glb" id="13_wly0c"]
+[ext_resource type="PackedScene" uid="uid://dtxv7o3tdju7c" path="res://assets/curved_sofa.glb" id="14_xftef"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uoqbt"]
 albedo_color = Color(0.8175213, 0.8175213, 0.81752115, 1)
@@ -15,16 +24,22 @@ background_color = Color(0.45404524, 0.6314682, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_whfra"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vo8r4"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7wth"]
+albedo_color = Color(0, 0, 0, 1)
+
 [node name="MainWorld" type="Node3D" unique_id=311081930]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1917820758]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016958952, -0.009853005, -0.0025091171)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0025138855, -0.0472188, 0.053758144)
 use_collision = true
 size = Vector3(50, 0.2, 50)
 material = SubResource("StandardMaterial3D_uoqbt")
 
 [node name="TrashItem" parent="." unique_id=1529927743 instance=ExtResource("2_uoqbt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7393036, 1.0000002, -0.0018501282)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.299322, 1.7015412, 13.567648)
 
 [node name="Player" parent="." unique_id=998323364 instance=ExtResource("1_itk02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02939248, 2.0000002, -0.0018501282)
@@ -68,49 +83,120 @@ size = Vector3(20, 0.2, 20)
 material = SubResource("StandardMaterial3D_whfra")
 
 [node name="Wall1" type="CSGBox3D" parent="Map" unique_id=1520808870]
-transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -0.13217163, 2, -24.960287)
-size = Vector3(49.35309, 6, 0.2)
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -0.13217166, 2.3919678, -24.960287)
+size = Vector3(49.35309, 6.7839355, 0.2)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Map/Wall1" unique_id=1701834299]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.91074, 0.5253079, -0.08544922)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.073649, 0.6581929, -0.08544922)
 operation = 2
-size = Vector3(2.194065, 2.832718, 1.1708984)
+size = Vector3(2.519884, 3.0984879, 1.1708984)
 
 [node name="Wall2" type="CSGBox3D" parent="Map" unique_id=2015115092]
-transform = Transform3D(0.0041539166, 0, 0.9999914, 0, 1, 0, -0.9999914, 0, 0.0041539166, -24.832165, 2, 0.24191904)
-size = Vector3(50.70941, 6, 0.5)
+transform = Transform3D(0.0041539166, 0, 0.9999914, 0, 1, 0, -0.9999914, 0, 0.0041539166, -24.832165, 2.2885742, 0.24191904)
+size = Vector3(50.709, 7, 0.5)
 
 [node name="InteriorWall" type="CSGBox3D" parent="Map" unique_id=891144313]
-transform = Transform3D(-0.99999416, 0, -0.003403321, 0, 1, 0, 0.003403321, 0, -0.99999416, -0.14423323, 2, 3.415096)
-size = Vector3(49.858948, 6, 0.5)
+transform = Transform3D(-0.99999416, 0, -0.003403321, 0, 1, 0, 0.003403321, 0, -0.99999416, -0.14423323, 2.2988892, 3.415096)
+size = Vector3(49.859, 7, 0.5)
 
 [node name="Doorway" type="CSGBox3D" parent="Map/InteriorWall" unique_id=402335437]
-transform = Transform3D(1, 0, -1.7695129e-08, 0, 1, 0, 1.7695129e-08, 0, 1, -16.1034, -0.20880127, -0.052964926)
+transform = Transform3D(1, 0, -2.4214387e-08, 0, 1, 0, 2.4214387e-08, 0, 1, -16.1034, -0.38687134, -0.052964926)
 operation = 2
-size = Vector3(3.081543, 3.4176025, 3)
+size = Vector3(3.081543, 3.7737427, 3)
 
 [node name="Wall3" type="CSGBox3D" parent="Map" unique_id=1279793348]
-transform = Transform3D(-0.9999975, 0, -0.0022863485, 0, 1, 0, 0.0022863485, 0, -0.9999975, -0.07819438, 1.9999943, 25.235464)
-size = Vector3(49.96283, 6, 0.5)
+transform = Transform3D(-0.9999975, 0, -0.0022863485, 0, 1, 0, 0.0022863485, 0, -0.9999975, -0.07819438, 2.327631, 25.235464)
+size = Vector3(49.963, 7, 0.5)
+material = SubResource("StandardMaterial3D_vo8r4")
 
 [node name="Wall4" type="CSGBox3D" parent="Map" unique_id=701019182]
-transform = Transform3D(-0.0050788894, 0, 0.9999871, 0, 1, 0, -0.9999871, 0, -0.0050788894, 24.538734, 1.9999943, 0.22181821)
-size = Vector3(50.42444, 6, 0.5)
+transform = Transform3D(-0.0050788894, 0, 0.9999871, 0, 1, 0, -0.9999871, 0, -0.0050788894, 24.538734, 2.2968082, 0.22181821)
+size = Vector3(50.424, 7, 0.5)
+material = SubResource("StandardMaterial3D_o7wth")
 
 [node name="InteriorWallDivider_2" type="CSGBox3D" parent="Map" unique_id=905094948]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9308605, 2.5103168, -10.938351)
-size = Vector3(0.7138672, 4.9136963, 28.191467)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9308605, 2.733797, -10.938351)
+size = Vector3(0.714, 7, 28.191)
 
 [node name="Doorcutout_2" type="CSGBox3D" parent="Map/InteriorWallDivider_2" unique_id=20613023]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3499756, -2.5231018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.47320557, -2.5231018)
 operation = 2
-size = Vector3(1, 4.0959473, 7.6948853)
+size = Vector3(1, 4.342407, 7.6948853)
 
 [node name="InteriorWall_3" type="CSGBox3D" parent="Map" unique_id=1164343637]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13745117, 2.5359254, 14.280064)
-size = Vector3(0.72509766, 4.843628, 21.370972)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13745117, 2.5857606, 14.280064)
+size = Vector3(0.725, 6.4503174, 21.371)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Map/InteriorWall_3" unique_id=1260858577]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22241211, -0.9604492, -1.0627441)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22241211, -1.0969238, -1.0627441)
 operation = 2
-size = Vector3(1.4448242, 2.9208984, 3.1254883)
+size = Vector3(1.4448242, 3.1938477, 3.1254883)
+
+[node name="Sketchfab_Scene" parent="Map" unique_id=669935430 instance=ExtResource("6_8i6ae")]
+transform = Transform3D(0.0026748413, 0, 0, 0, 0.0026748413, 0, 0, 0, 0.0026748413, 2.9031143, 0.56645966, 7.0410624)
+
+[node name="Sketchfab_Scene2" parent="Map" unique_id=367435725 instance=ExtResource("7_v7yd6")]
+transform = Transform3D(-2.2433445, 0, -0.05463053, 0, 2.2440097, 0, 0.05463053, 0, -2.2433445, 7.384764, 0.4403596, 24.668156)
+
+[node name="Sketchfab_Scene3" parent="Map" unique_id=484376102 instance=ExtResource("7_v7yd6")]
+transform = Transform3D(-2.2433445, 0, -0.05463053, 0, 2.2440097, 0, 0.05463053, 0, -2.2433445, 11.659531, 0.4403596, 24.655615)
+
+[node name="Sketchfab_Scene4" parent="Map" unique_id=828103794 instance=ExtResource("7_v7yd6")]
+transform = Transform3D(-2.2433445, 0, -0.05463053, 0, 2.2440097, 0, 0.05463053, 0, -2.2433445, 15.686345, 0.4403596, 24.557623)
+
+[node name="Sketchfab_Scene5" parent="Map" unique_id=866043628 instance=ExtResource("8_wly0c")]
+transform = Transform3D(-0.016328074, 0, -2.2116187, 0, 2.211679, 0, 2.2116187, 0, -0.016328074, 18.425404, 0.3314353, 24.162037)
+
+[node name="Sketchfab_Scene" parent="." unique_id=177396435 instance=ExtResource("9_xftef")]
+transform = Transform3D(-0.01111319, 0, 0.4938952, 0, 0.49402037, 0, -0.4938952, 0, -0.01111319, 2.1301768, 2.9317741, 24.053612)
+
+[node name="Sketchfab_Scene2" parent="." unique_id=568693762 instance=ExtResource("10_bqrff")]
+transform = Transform3D(5.2238755, 0, 0, 0, 5.2238755, 0, 0, 0, 5.2238755, 90.46016, -4.6665974, 14.111053)
+
+[node name="Sketchfab_Scene3" parent="." unique_id=1758684604 instance=ExtResource("11_ju1fa")]
+transform = Transform3D(-3.5875838, 0, 0.10635162, 0, 3.5891595, 0, -0.10635162, 0, -3.5875838, 12.310293, 3.6089664, 24.9855)
+
+[node name="Sketchfab_Scene6" parent="." unique_id=1301358022 instance=ExtResource("11_ju1fa")]
+transform = Transform3D(-3.5875838, 0, 0.10635162, 0, 3.5891595, 0, -0.10635162, 0, -3.5875838, 15.865142, 3.6089664, 24.9855)
+
+[node name="Sketchfab_Scene7" parent="." unique_id=1923734848 instance=ExtResource("11_ju1fa")]
+transform = Transform3D(-3.5875838, 0, 0.10635162, 0, 3.5891595, 0, -0.10635162, 0, -3.5875838, 22.232014, 2.1551394, 24.9855)
+
+[node name="Sketchfab_Scene9" parent="." unique_id=1808846852 instance=ExtResource("11_ju1fa")]
+transform = Transform3D(-3.5875838, 0, 0.10635162, 0, 3.5891595, 0, -0.10635162, 0, -3.5875838, 22.232014, 4.0376987, 24.9855)
+
+[node name="Sketchfab_Scene8" parent="." unique_id=2044755941 instance=ExtResource("11_ju1fa")]
+transform = Transform3D(-3.5875838, 0, 0.10635162, 0, 3.5891595, 0, -0.10635162, 0, -3.5875838, 22.232014, 0.23810816, 24.9855)
+
+[node name="Sketchfab_Scene10" parent="." unique_id=1029399885 instance=ExtResource("11_ju1fa")]
+transform = Transform3D(0.097522646, 0, -3.5878344, 0, 3.5891595, 0, 3.5878344, 0, 0.097522646, 24.043564, 0.39078832, 5.465348)
+
+[node name="Sketchfab_Scene13" parent="." unique_id=480026662 instance=ExtResource("11_ju1fa")]
+transform = Transform3D(0.097522646, 0, -3.5878344, 0, 3.5891595, 0, 3.5878344, 0, 0.097522646, 24.14016, 0.39078832, 9.019061)
+
+[node name="Sketchfab_Scene14" parent="." unique_id=992439703 instance=ExtResource("11_ju1fa")]
+transform = Transform3D(0.097522646, 0, -3.5878344, 0, 3.5891595, 0, 3.5878344, 0, 0.097522646, 24.344238, 0.39078832, 16.52707)
+
+[node name="Sketchfab_Scene15" parent="." unique_id=1809509904 instance=ExtResource("11_ju1fa")]
+transform = Transform3D(0.097522646, 0, -3.5878344, 0, 3.5891595, 0, 3.5878344, 0, 0.097522646, 24.442184, 0.39078832, 20.130472)
+
+[node name="Sketchfab_Scene11" parent="." unique_id=680746965 instance=ExtResource("11_ju1fa")]
+transform = Transform3D(0.097522646, 0, -3.5878344, 0, 3.5891595, 0, 3.5878344, 0, 0.097522646, 24.043564, 2.3049996, 5.465348)
+
+[node name="Sketchfab_Scene12" parent="." unique_id=1680838183 instance=ExtResource("11_ju1fa")]
+transform = Transform3D(0.097522646, 0, -3.5878344, 0, 3.5891595, 0, 3.5878344, 0, 0.097522646, 24.043564, 4.178407, 5.465348)
+
+[node name="Sketchfab_Scene4" parent="." unique_id=1638314825 instance=ExtResource("11_ju1fa")]
+transform = Transform3D(-3.5875838, 0, 0.10635162, 0, 3.5891595, 0, -0.10635162, 0, -3.5875838, 8.698199, 3.6089664, 24.9855)
+
+[node name="Sketchfab_Scene5" parent="." unique_id=742369166 instance=ExtResource("11_ju1fa")]
+transform = Transform3D(-3.5875838, 0, 0.10635162, 0, 3.5891595, 0, -0.10635162, 0, -3.5875838, 5.17811, 3.6089664, 24.9855)
+
+[node name="Sketchfab_Scene16" parent="." unique_id=1095073975 instance=ExtResource("12_fc1ei")]
+transform = Transform3D(-2.8653598, 0, -0.21348591, 0, 2.8733017, 0, 0.21348591, 0, -2.8653598, 23.87516, 2.3357215, 17.435236)
+
+[node name="Sketchfab_Scene17" parent="." unique_id=654752640 instance=ExtResource("13_wly0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.544048, 0.08266497, 18.635569)
+
+[node name="Sketchfab_Scene18" parent="." unique_id=896098828 instance=ExtResource("14_xftef")]
+transform = Transform3D(-0.009349085, 0, -2.0289886, 0, 2.0290103, 0, 2.0289886, 0, -0.009349085, -4.832732, 0.0648499, 22.757154)
