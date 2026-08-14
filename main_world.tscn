@@ -18,11 +18,11 @@ background_color = Color(0.45404524, 0.6314682, 1, 1)
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1917820758]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016958952, -0.009853005, -0.0025091171)
 use_collision = true
-size = Vector3(20, 1, 20)
+size = Vector3(60, 0.2, 60)
 material = SubResource("StandardMaterial3D_uoqbt")
 
 [node name="TrashItem" parent="." unique_id=1529927743 instance=ExtResource("2_uoqbt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02939248, 1.0000002, -0.0018501282)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7393036, 1.0000002, -0.0018501282)
 
 [node name="Player" parent="." unique_id=998323364 instance=ExtResource("1_itk02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02939248, 2.0000002, -0.0018501282)
@@ -57,3 +57,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.983041, 0.590147, -3.002509
 
 [node name="RecycleItem" parent="." unique_id=2082948300 instance=ExtResource("5_uue8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0293925, 1.6000003, -5.00185)
+
+[node name="Map" type="CSGCombiner3D" parent="." unique_id=1636295072]
+use_collision = true
+
+[node name="Floor" type="CSGBox3D" parent="Map" unique_id=2076412604]
+size = Vector3(20, 0.2, 20)
+
+[node name="Wall1" type="CSGBox3D" parent="Map" unique_id=1520808870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -29.712942)
+size = Vector3(60, 6, 0.2)
+
+[node name="Wall2" type="CSGBox3D" parent="Map" unique_id=2015115092]
+transform = Transform3D(0.0041539166, 0, 0.9999914, 0, 1, 0, -0.9999914, 0, 0.0041539166, -29.733513, 2, -0.19298339)
+size = Vector3(60, 6, 0.5)
+
+[node name="InteriorWall" type="CSGBox3D" parent="Map" unique_id=891144313]
+transform = Transform3D(-0.99999416, 0, -0.003403321, 0, 1, 0, 0.003403321, 0, -0.99999416, 0.28969383, 2, 3.4136193)
+size = Vector3(60, 6, 0.5)
+
+[node name="Doorway" type="CSGBox3D" parent="Map/InteriorWall" unique_id=402335437]
+transform = Transform3D(1, 0, -6.7520887e-09, 0, 1, 0, 6.7520887e-09, 0, 1, -15.562627, -0.19934082, -0.052964926)
+operation = 2
+size = Vector3(2, 3.3986816, 3)
+
+[node name="Wall3" type="CSGBox3D" parent="Map" unique_id=1279793348]
+transform = Transform3D(-0.9999975, 0, -0.0022863485, 0, 1, 0, 0.0022863485, 0, -0.9999975, -0.29898834, 1.9999943, 29.02092)
+size = Vector3(60, 6, 0.5)
+
+[node name="Wall4" type="CSGBox3D" parent="Map" unique_id=701019182]
+transform = Transform3D(-0.0050788894, 0, 0.9999871, 0, 1, 0, -0.9999871, 0, -0.0050788894, 29.935062, 1.9999943, -0.21000004)
+size = Vector3(60, 6, 0.5)

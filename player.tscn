@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://6h06468uhxkd"]
 
 [ext_resource type="Script" uid="uid://n5jk1ddb0v8m" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://b4el3b7oit617" path="res://canvas_layer.gd" id="2_onrkg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -24,3 +25,34 @@ max_results = 2
 
 [node name="CarryPosition" type="Marker3D" parent="Camera3D" unique_id=1028004456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1551951810]
+script = ExtResource("2_onrkg")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=138902341]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(3, 3)
+mouse_filter = 2
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=1203432079]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -65.0
+offset_bottom = 49.0
+grow_horizontal = 0
+text = "Time: 60
+"
+
+[node name="Timer" type="Timer" parent="CanvasLayer" unique_id=737908404]
+autostart = true
