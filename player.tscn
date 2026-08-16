@@ -58,4 +58,50 @@ text = "Time: 60
 "
 
 [node name="Timer" type="Timer" parent="CanvasLayer" unique_id=737908404]
+wait_time = 60.0
+one_shot = true
 autostart = true
+
+[node name="GameOverPanel" type="Control" parent="CanvasLayer" unique_id=211579062]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GameOverPanel" unique_id=1177606753]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/GameOverPanel" unique_id=1639400440]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.035
+offset_left = 534.0
+offset_top = 356.0
+offset_right = 574.68
+offset_bottom = 356.32
+text = "TIME'S UP!"
+
+[node name="FinalScoreLabel" type="Label" parent="CanvasLayer/GameOverPanel" unique_id=1931092268]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 408.0
+offset_right = 630.0
+offset_bottom = 450.0
+text = "Final Score: 0"
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/GameOverPanel" unique_id=1139158577]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
