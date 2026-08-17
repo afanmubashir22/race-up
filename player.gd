@@ -8,31 +8,26 @@ extends CharacterBody3D
 @onready var shapecast: ShapeCast3D = $Camera3D/RayCast3D
 @onready var carry_position: Marker3D = $Camera3D/CarryPosition
 
-@onready var game_over_panel: Control = $CanvasLayer/GameOverPanel
-@onready var final_score_label: Label = $CanvasLayer/GameOverPanel/FinalScoreLabel
-@onready var restart_button: Button = $CanvasLayer/GameOverPanel/RestartButton
+@onready var game_over_panel: Control = find_child("GameOverPanel", true, false)
+@onready var final_score_label: Label = find_child("FinalScoreLabel", true, false)
+@onready var restart_button: Button = find_child("RestartButton", true, false)
 
-@onready var time_label: Label = $CanvasLayer/TimeLabel
-@onready var score_label: Label = $CanvasLayer/ScoreLabel
-@onready var timer: Timer = $CanvasLayer/Timer
+@onready var time_label: Label = find_child("TimeLabel", true, false)
+@onready var score_label: Label = find_child("ScoreLabel", true, false)
+@onready var timer: Timer = find_child("	Timer", true, false)
 var held_item: RigidBody3D = null
 var score: int = 0
-func _process(delta: float) -> void:
-		if timer and time_label and not timer.is_stopped():
-				time_label.text = "Time: "  + str(ceil(timer.time_left))
-func add_score(amount: int) -> void:
-		score += amount
-		if score_label:
-				score_label.text = "Score: " + str(score)
 
 func _ready() -> void:
+		if game_over_panel:
+				game_over_panel.hide()
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		if shapecast:
 				shapecast.add_exception(self)
-		restart_button.pressed.connect(_on_restart_pressed)
-		if has_node("CanvasLayer/Timer"):
-				$CanvasLayer/Timer.timeout.connect(_on_game_over)
-		
+		if restart_button:
+				restart_button.pressed.connect(_on_restart_pressed)
+		if timer:
+				timer.timeout.connect(_on_game_over)
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 			velocity += get_gravity() * delta
@@ -92,11 +87,15 @@ func drop_item() -> void:
 				print("Dropped: ", held_item.name)
 				held_item = null
 func _on_game_over() -> void:
-		final_score_label.text = "Final Score: " + str(score)
-		game_over_panel.show()
+		var hud_score = score_label
+		if hud_score:
+				final_score_label.text = "Final Score: " + hud_score.text.replace("Score: ", "")
+		else:
+				final_score_label.text = "Final Score: " + str(score)
+		if game_over_panel:
+				game_over_panel.show()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		get_tree().paused = true
 func _on_restart_pressed() -> void:
 		get_tree().paused = false
 		get_tree().reload_current_scene()
-		

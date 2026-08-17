@@ -11,7 +11,6 @@ radius = 0.4
 
 [node name="Player" type="CharacterBody3D" unique_id=998323364]
 script = ExtResource("1_4flbx")
-SPEED = 8.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1968646033]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41870117, 0)
@@ -30,6 +29,7 @@ max_results = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1551951810]
+process_mode = 3
 script = ExtResource("2_onrkg")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=138902341]
@@ -63,7 +63,7 @@ one_shot = true
 autostart = true
 
 [node name="GameOverPanel" type="Control" parent="CanvasLayer" unique_id=211579062]
-process_mode = 2
+process_mode = 3
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -91,6 +91,7 @@ offset_left = 534.0
 offset_top = 356.0
 offset_right = 574.68
 offset_bottom = 356.32
+theme_override_font_sizes/font_size = 36
 text = "TIME'S UP!"
 
 [node name="FinalScoreLabel" type="Label" parent="CanvasLayer/GameOverPanel" unique_id=1931092268]
@@ -99,6 +100,7 @@ offset_left = 528.0
 offset_top = 408.0
 offset_right = 630.0
 offset_bottom = 450.0
+theme_override_font_sizes/font_size = 36
 text = "Final Score: 0"
 
 [node name="RestartButton" type="Button" parent="CanvasLayer/GameOverPanel" unique_id=1139158577]
