@@ -52,6 +52,9 @@ func _physics_process(delta: float) -> void:
 	
 	if held_item:
 			held_item.global_transform.origin = carry_position.global_transform.origin
+func _process(_delta: float) -> void:
+		if timer and time_label:
+				time_label.text = "Time: " + str(ceil(timer.time_left))
 func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 				if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
