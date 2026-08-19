@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cq2yqop6nu35i"]
+
+[ext_resource type="Script" uid="uid://cr0f27hndu1kw" path="res://portal.gd" id="1_0r486"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ef3v5"]
+size = Vector3(1, 2.0394287, 1.1733398)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4hdyq"]
+
+[node name="Portal" type="Area3D" unique_id=2105516415]
+script = ExtResource("1_0r486")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1156453045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.010925293, -0.08666992)
+shape = SubResource("BoxShape3D_ef3v5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=864859143]
+mesh = SubResource("CylinderMesh_4hdyq")
