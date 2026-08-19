@@ -102,3 +102,5 @@ func _on_game_over() -> void:
 func _on_restart_pressed() -> void:
 		get_tree().paused = false
 		get_tree().reload_current_scene()
+func die() -> void:
+		get_tree().call_deferred("reload_current_scene")
