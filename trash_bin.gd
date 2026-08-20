@@ -8,11 +8,13 @@ func _on_body_entered(body: Node3D) -> void:
 				var type = body.get_meta("item_type")
 				if type == accepts_type:
 						score += 10
-						_update_score_ui()
+						_update_score_ui(10)
 						body.queue_free()
 				else:
 						print("WRONG BIN!")
-func _update_score_ui() -> void:
-		var label = get_tree().root.find_child("Label", true, false)
-		if label:
-				label.text = "Score: " + str(score)
+func _update_score_ui(amount: int) -> void:
+		var canvas_layer = get_tree().root.find_child("CanvasLayer", true, false)
+		if canvas_layer and canvas_layer.has_method("add_score"):
+				canvas_layer.add_score(amount)
+		else:
+				print("CanvasLayer UI not found!")

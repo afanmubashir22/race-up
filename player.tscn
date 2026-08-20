@@ -59,6 +59,7 @@ text = "Time: 60
 "
 
 [node name="Timer" type="Timer" parent="CanvasLayer" unique_id=737908404]
+process_mode = 3
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=153776539]
 offset_right = 40.0
