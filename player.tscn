@@ -59,9 +59,10 @@ text = "Time: 60
 "
 
 [node name="Timer" type="Timer" parent="CanvasLayer" unique_id=737908404]
-wait_time = 60.0
-one_shot = true
-autostart = true
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=153776539]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="GameOverPanel" type="Control" parent="CanvasLayer" unique_id=211579062]
 process_mode = 3
@@ -74,7 +75,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/GameOverPanel" unique_id=1177606753]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
