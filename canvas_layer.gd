@@ -5,6 +5,7 @@ extends CanvasLayer
 var time_left: int = 90
 var score: int = 0
 var is_game_over: bool = false
+var target_score: int = 100
 func _ready() -> void:
 		var current_scene_name = get_tree().current_scene.name.to_lower()
 		if timer:
@@ -35,6 +36,8 @@ func add_score(amount: int) -> void:
 				return
 		score += amount
 		update_display()
+		if score >= target_score:
+				win_game()
 func update_display() -> void:
 		var scene_name = get_tree().current_scene.name.to_lower()
 		if timer_label:
@@ -48,4 +51,20 @@ func game_over() -> void:
 		is_game_over = true
 		if timer_label:
 				timer_label.text = "TIME'S UP!"
+		var bgm_player = get_tree().root.find_child("BGMPlayer", true, false)
+		if bgm_player:
+				bgm_player.stop()
 		print("Game Over! Time ran out.")
+func win_game() -> void:
+		is_game_over = true
+		if timer:
+				timer.stop()
+		if timer_label:
+				timer_label.text = "STAGE CLEAR!"
+		var bgm_player = get_tree().root.find_child("BGMPlayer", true, false)
+		if bgm_player:
+				bgm_player.stop()
+		print("YOU WIN! Portal unlocked.")
+		var portal = get_tree().root.find_child("Portal", true, false)
+		if portal and portal.has_method("unlock"):
+				portal.unlock()
