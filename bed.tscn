@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://tlbgqih6tle"]
+
+[ext_resource type="PackedScene" uid="uid://d1hgi02mvxykl" path="res://assets/bed_01.glb" id="1_xqjo8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c32mu"]
+size = Vector3(7.9265137, 1.5417175, 5.561783)
+
+[node name="Node3D" type="Node3D" unique_id=1145189007]
+
+[node name="Sketchfab_Scene" parent="." unique_id=654752640 instance=ExtResource("1_xqjo8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5557474, -1.1920929e-07, 0.085600615)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Sketchfab_Scene" unique_id=1030015488]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/RigidBody3D" unique_id=772774855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9366455, 0.78230286, -0.29860687)
+shape = SubResource("BoxShape3D_c32mu")

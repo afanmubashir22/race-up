@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dui8sy1ifhodl"]
+
+[ext_resource type="PackedScene" uid="uid://b4ttv12hhpqjb" path="res://assets/fridge_-_modern_furniture_game-ready.glb" id="1_ypa8n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_085p4"]
+size = Vector3(4.432617, 9.898003, 4.475342)
+
+[node name="Node3D" type="Node3D" unique_id=2091425011]
+
+[node name="Sketchfab_Scene" parent="." unique_id=177396435 instance=ExtResource("1_ypa8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4728814, 1.1920929e-07, -1.8964343)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Sketchfab_Scene" unique_id=1198297148]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/RigidBody3D" unique_id=30983168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011565208, 0.009754062, 0.016967773)
+shape = SubResource("BoxShape3D_085p4")

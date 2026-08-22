@@ -43,6 +43,9 @@ func update_display() -> void:
 		if timer_label:
 				if "main" in scene_name:
 						timer_label.text = "Time: " +  str(time_left)
+				elif "parkour" in scene_name:
+						timer_label.text = "Goal: Reach Shrine (90+ PTS)"
+						timer_label.show()
 				else:
 						timer_label.hide()
 		if score_label:
