@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://byahi2gqu21ku"]
+
+[ext_resource type="Script" uid="uid://c1fmhoalwvw86" path="res://scripts/trash_bin.gd" id="1_uapnv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7lhk"]
+albedo_color = Color(0, 0.8117647, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uapnv"]
+material = SubResource("StandardMaterial3D_h7lhk")
+size = Vector3(1.5, 1.2, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wwu10"]
+size = Vector3(1.8, 1.8, 1.8)
+
+[node name="TrashBin" type="Area3D" unique_id=1447114455]
+script = ExtResource("1_uapnv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1876989492]
+mesh = SubResource("BoxMesh_uapnv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=258174936]
+shape = SubResource("BoxShape3D_wwu10")

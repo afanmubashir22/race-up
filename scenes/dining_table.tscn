@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bhlv2m4qpwx5g"]
+
+[ext_resource type="PackedScene" uid="uid://cym4oy00t3n15" path="res://models/simple_dining_table.glb" id="1_n3ks8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ra2tf"]
+size = Vector3(1301.0363, 1079.8024, 2011.9393)
+
+[node name="Node3D" type="Node3D" unique_id=1876336475]
+
+[node name="Sketchfab_Scene" parent="." unique_id=669935430 instance=ExtResource("1_n3ks8")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Sketchfab_Scene" unique_id=1577293998]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/RigidBody3D" unique_id=1197843323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.88336, 189.28561, 55.42682)
+shape = SubResource("BoxShape3D_ra2tf")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d3pxe7jc2cbic"]
+
+[ext_resource type="PackedScene" uid="uid://dtxv7o3tdju7c" path="res://models/curved_sofa.glb" id="1_64a6s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l1mjm"]
+size = Vector3(2.536438, 0.49700928, 4.2245026)
+
+[node name="Node3D" type="Node3D" unique_id=929806613]
+
+[node name="Sketchfab_Scene" parent="." unique_id=896098828 instance=ExtResource("1_64a6s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40095615, 0, -0.08710241)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Sketchfab_Scene" unique_id=755461498]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/RigidBody3D" unique_id=388555602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00045776367, 0.31674194, -0.032051086)
+shape = SubResource("BoxShape3D_l1mjm")

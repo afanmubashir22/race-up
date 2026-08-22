@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c3vk5a02f7yqi"]
+
+[ext_resource type="PackedScene" uid="uid://1kcovw3507ax" path="res://models/a_kitchen_sink_with_cabinets_for_storage.glb" id="1_wm2ei"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tytwa"]
+size = Vector3(0.6209717, 0.7953491, 1.894043)
+
+[node name="Node3D" type="Node3D" unique_id=983665678]
+
+[node name="Sketchfab_Scene" parent="." unique_id=866043628 instance=ExtResource("1_wm2ei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12893295, 0, 0.15332699)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Sketchfab_Scene" unique_id=1769194817]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/RigidBody3D" unique_id=260893473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02919519, 0.4220276, -0.015886545)
+shape = SubResource("BoxShape3D_tytwa")

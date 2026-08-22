@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cq2yqop6nu35i"]
+
+[ext_resource type="Script" uid="uid://cr0f27hndu1kw" path="res://scripts/portal.gd" id="1_0r486"]
+[ext_resource type="PackedScene" uid="uid://c251l3u18eool" path="res://models/magic_portal.glb" id="2_ef3v5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_grrij"]
+radius = 0.8333028
+
+[node name="Portal" type="Area3D" unique_id=2105516415]
+script = ExtResource("1_0r486")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1156453045]
+transform = Transform3D(2.905398, 0, 0, 0, 2.905398, 0, 0, 0, 2.905398, 0, 2.387083, -0.08666992)
+shape = SubResource("SphereShape3D_grrij")
+
+[node name="Sketchfab_Scene" parent="." unique_id=232632846 instance=ExtResource("2_ef3v5")]
+transform = Transform3D(1.7027512, 0, 0, 0, 1.7027512, 0, 0, 0, 1.7027512, 0, 0, 0)

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cjwgdoqbek3pw"]
+
+[ext_resource type="PackedScene" uid="uid://wb7d837i35j3" path="res://models/wall-mounted_kitchen_cupboard.glb" id="1_sqpr7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m2ijw"]
+size = Vector3(0.97998047, 0.52789307, 0.32525635)
+
+[node name="Node3D" type="Node3D" unique_id=1152100438]
+
+[node name="Sketchfab_Scene" parent="." unique_id=332529695 instance=ExtResource("1_sqpr7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011353135, 0, -0.05882907)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Sketchfab_Scene" unique_id=1549159072]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/RigidBody3D" unique_id=1076644393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010009766, 0.26870728, 0.18887329)
+shape = SubResource("BoxShape3D_m2ijw")
