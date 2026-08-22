@@ -1,5 +1,5 @@
 extends Area3D
-@export var target_scene: String = "res://parkour_world.scn"
+@export var target_scene: String = "res://scenes/parkour_world.scn"
 var is_unlocked: bool = false
 func _ready() -> void:
 		body_entered.connect(_on_body_entered)
